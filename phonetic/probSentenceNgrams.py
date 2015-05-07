@@ -1,14 +1,15 @@
 # Outputs probabilities of each mnemonic (maybe should normalize, format..) - bigrams
-# python probSentenceNgrams.py corpus.txt mnemonic corpusSyl.txt
+# python probSentenceNgrams.py "BigramModel.p" "PhonemeModel.p" mnemonic
 import sys, os, re, nltk, math
 from nltk.probability import FreqDist, ConditionalProbDist, ConditionalFreqDist, ELEProbDist
 from nltk.probability import LidstoneProbDist, WittenBellProbDist, SimpleGoodTuringProbDist
 import pronunciation
 from nltk.corpus.reader import cmudict
+import pickle
 
-pathCorpus = sys.argv[1]
-pathMnemonics = sys.argv[2]
-pathCorpusSyl = sys.argv[3]
+pathModelPickle = sys.argv[1] # BigramModel.p
+pathSylModelPickle = sys.argv[2] # PhonemeModel.p
+pathMnemonics = sys.argv[3]
 
 mnemonics = []
 mnemSyl = []
@@ -35,7 +36,7 @@ for idx, line in enumerate(mnemonics):
 
 #print mnemonics, len(mnemonics)
 #print mnemSyl, len(mnemSyl)
-
+'''
 corpus = []
 for line in open(pathCorpus):
     corpus.append(line)
@@ -72,6 +73,10 @@ for line in corpusSyl:
 # or, SimpleGoodTuringProbDist
 cpdist = ConditionalProbDist(cfdist, ELEProbDist)
 cpdistSyl = ConditionalProbDist(cfdistSyl, ELEProbDist)
+'''
+
+cpdist = pickle.load(open(pathModelPickle, "rb"))
+cpdistSyl = pickle.load(open(pathSylModelPickle, "rb"))
 
 for i,m in enumerate(mnemSyl):
     words = m.split()
