@@ -1,0 +1,20 @@
+cardinal directions, 1
+great lakes of north america, 0
+notes of treble clef, 1
+spaces of treble clef, 1
+notes of bass clef, 1
+spaces of bass clef, 1
+things to do after an injury, 1
+arithmetic operations, 1
+major Roman numerals, 1
+charges on atoms, 1
+oxidation-reduction sites, 1
+vowels, 1
+japanese lexical ordering of vowels, 1
+trigonometric functions that are positive in each quadrant, beginning with the top right and continuing counterclockwise, 1
+guitar strings, 1
+checks before flight take-off, 1
+polynomial multiplication, 1
+firefighting list of things to do, 1
+first aid checks, 1
+stroke victime checking, 1
