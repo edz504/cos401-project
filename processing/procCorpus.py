@@ -8,7 +8,7 @@ for root, dirs, files in os.walk(path, topdown=False):
         #print(os.path.join(root, name))
         fullPath = os.path.join(root, name)
         if name == '.DS_Store':
-        	continue # annoying hack
+            continue # annoying hack
 
         outProc = open(fullPath + '_proc', 'w')
 
@@ -17,22 +17,22 @@ for root, dirs, files in os.walk(path, topdown=False):
         punctuation = '[.:;!?]'
 
         for line in open(fullPath):
-        	#if re.search("(From:)|(Subject:)|(writes:)|(^In article)", line):
-        	#	continue
-        	tokens = line.split()
-        	#t_final = []
-        	for t in tokens:
-        		# end of sentence
-        		if re.search(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s', t)
-        		#if re.search(punctuation, t): # end of sentence
-        			t = re.sub(punctuation, '', t)
-        			currLine += t + "\n"
-        			print currLine
-        			outProc.write(currLine)
-        			print 'here'
-        			currLine = ''
-        		else:
-        			t = re.sub("[^0-9a-zA-Z'-]+", '', t)	
-        			currLine += t + ' '
+            #if re.search("(From:)|(Subject:)|(writes:)|(^In article)", line):
+            #   continue
+            tokens = line.split()
+            #t_final = []
+            for t in tokens:
+                # end of sentence
+                if re.search(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s', t)
+                #if re.search(punctuation, t): # end of sentence
+                    t = re.sub(punctuation, '', t)
+                    currLine += t + "\n"
+                    print currLine
+                    outProc.write(currLine)
+                    print 'here'
+                    currLine = ''
+                else:
+                    t = re.sub("[^0-9a-zA-Z'-]+", '', t)    
+                    currLine += t + ' '
 
         outProc.close()

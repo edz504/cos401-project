@@ -15,24 +15,24 @@ cWords = c.words()
 cDict = c.dict()
 
 for line in open(pathCorpus):
-	if len(line.split()) == 0:
-		continue
-	words = line.split()
-	lineMod = ''
-	for word in words:
-		#word = word.upper()
-		if word in cWords:
-			lineMod += " ".join(cDict[word][0]) + "  " # first list (pronunciation)
-		'''
-		else:
-			pr = pronunciation.Pronounce(words)
-			for k,v in pr.p().iteritems():
-				lineMod += v[1] + '  '
-		'''
-	#sylCorpus.append(lineMod.strip())
+    if len(line.split()) == 0:
+        continue
+    words = line.split()
+    lineMod = ''
+    for word in words:
+        #word = word.upper()
+        if word in cWords:
+            lineMod += " ".join(cDict[word][0]) + "  " # first list (pronunciation)
+        '''
+        else:
+            pr = pronunciation.Pronounce(words)
+            for k,v in pr.p().iteritems():
+                lineMod += v[1] + '  '
+        '''
+    #sylCorpus.append(lineMod.strip())
 
-	#print line + lineMod.strip()
-	outSyl.write(lineMod.strip() + "\n")
+    #print line + lineMod.strip()
+    outSyl.write(lineMod.strip() + "\n")
 
 outSyl.close()
 
