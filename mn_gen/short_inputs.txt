@@ -5,7 +5,7 @@ ftreblespace atreblespace ctreblespace etreblespace
 gbass bbass dbass fbass abass
 abassspace cbassspace ebassspace gbassspace
 rest ice compress elevate
-parentheses expoent multiply divide add subtract
+parentheses exponent multiply divide add subtract
 l c d m
 cation positive anion negative
 reduction cathode oxidation anode
