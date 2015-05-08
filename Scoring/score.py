@@ -204,7 +204,7 @@ for i,m in enumerate(mnemSyl):
 #----------------------------------------    
 output = open("results.txt","w")
 out = ""
-for line in results:
+for line in lines:
     out = out + line + "\t" + str(results[line][0]) + "\t" + str(results[line][1]) + "\t" + str(results[line][2]) + "\t" + str(results[line][3]) + "\t" + str(results[line][4]) + "\t" + str(results[line][5]) + "\t" + str(results[line][6]) + "\t" + str(proba[line][0]) + "\t" + str(proba[line][1])+ "\n"
     
 output.write(out)
