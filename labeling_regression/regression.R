@@ -1,5 +1,3 @@
-
-
 df <- read.delim('results.txt', row.names=1, header=FALSE)
 colnames(df) <- c('sem_dist', 'fam', 'image', 'concr', 'syll', 'logfreq', 'aoa', 'ph1', 'ph2')
 df.scale <- data.frame(scale(df))
@@ -17,10 +15,18 @@ stepreg <- step(lm.fit.null, scope=list(upper=lm.fit.full), direction="both")
 ### Feature importance
 library(mlbench)
 library(caret)
-control <- trainControl(method="repeatedcv", number=10, repeats=5)
 
 # Linear regression
-model1 <- train(y~., data=df.scale, method="lm", trControl=control)
+control <- trainControl(method="repeatedcv", number=20, repeats=10)
+model1 <- train(y~., df.scale, method="lm", trControl=control)
 imp1 <- varImp(model1, scale=FALSE)
 print(imp1)
 plot(imp1)
+
+# partial least squares
+model1 <- train(y~., df.scale, method="kernelpls", trControl=control)
+imp1 <- varImp(model1, scale=FALSE)
+print(imp1)
+plot(imp1)
+
+fit.final <- lm(y ~ fam + syll + aoa + ph2, data=df.scale)

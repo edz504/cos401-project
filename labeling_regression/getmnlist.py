@@ -1,6 +1,9 @@
 import pandas as pd
+import numpy as np
+import matplotlib.mlab as mlab
+import matplotlib.pyplot as plt
 
-with open('googleform.csv', 'rb') as f:
+with open('googleform2.csv', 'rb') as f:
     lines = f.read().split('\n')
 
 mn_list = lines[0].split(',')
@@ -20,4 +23,6 @@ for vote in lines[1:]:
     i += 1
 
 y = vote_df.sum(axis=1)
+sds = vote_df.apply(np.std, axis=1)
+sds.to_csv('mn_sds.csv')
 y.to_csv('borda_y.csv')

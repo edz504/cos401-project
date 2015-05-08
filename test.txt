@@ -1,0 +1,31 @@
+>>> vote_df.iloc[list(y).index(max(y))]
+Eddie Zhou Borda                 9
+Alex Wollack Borda               9
+Ed Xiao Borda                    9
+Irvin Borda                      9
+luffy Borda                      7
+Ghassen Borda                    7
+kenny Borda                      9
+Franklyn Georges Darnis Borda    7
+Alan Borda                       9
+Sarah Borda                      9
+Joseph Zhou Borda                9
+ mcoxjr" Borda                   9
+Jie Chen Borda                   9
+Name: good boys don't fool around, dtype: int64
+
+>>> vote_df.iloc[list(y).index(min(y))]
+Eddie Zhou Borda                 0
+Alex Wollack Borda               0
+Ed Xiao Borda                    0
+Irvin Borda                      0
+luffy Borda                      1
+Ghassen Borda                    1
+kenny Borda                      0
+Franklyn Georges Darnis Borda    0
+Alan Borda                       0
+Sarah Borda                      0
+Joseph Zhou Borda                0
+ mcoxjr" Borda                   1
+Jie Chen Borda                   0
+Name: eph am deeply grateful beyond expression, dtype: int64
