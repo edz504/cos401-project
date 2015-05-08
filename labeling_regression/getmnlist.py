@@ -19,4 +19,5 @@ for vote in lines[1:]:
     vote_df[vote_df.columns[i]] = [(N - int(v)) for v in vote.split(',')[1:171]]
     i += 1
 
-y = list(vote_df.sum(axis=1))
+y = vote_df.sum(axis=1)
+y.to_csv('borda_y.csv')
